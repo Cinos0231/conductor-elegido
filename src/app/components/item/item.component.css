@@ -1,5 +1,9 @@
 .row{
-    display: flex;
-    flex-wrap: wrap;
     box-sizing: border-box;
+    display: flex;
+    box-sizing: border-box;
+}
+
+div{
+    padding: 5px 0;
 }

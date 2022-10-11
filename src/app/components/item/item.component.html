@@ -1,0 +1,22 @@
+<div>
+  <div>
+    {{ item.title }}
+  </div>
+
+  <div>{{ item.kilometer }} km</div>
+
+  <div *ngIf="item.kilometer <= 30">${{ 30000 }}</div>
+
+  <div *ngIf="item.kilometer >= 30">
+    ${{ (item.kilometer - 30) * 1700 + 30000 }}
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-info">
+      <!-- (click)= "item.kilometer= 35"> -->
+      Cotizar
+    </button>
+  </div>
+
+  <br />
+</div>

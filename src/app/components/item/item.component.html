@@ -1,24 +1,26 @@
-<div class="row">
+<div class="">
   <div class="title">
     {{ item.title }}
   </div>
 
   <div class="kilometer">{{ item.kilometer }} km</div>
 
+  <!-- aplicando un if si es menor o mayor de 30km -->
   <div *ngIf="item.kilometer <= 30; then menor else mayor"></div>
   <br />
   
-  <ng-template #menor> 
-    ${{ 30000 }} 
-  </ng-template>
-  
+    <ng-template #menor> 
+      ${{ 30000 }} 
+    </ng-template>
+    
 
-  <ng-template #mayor>
-    <!-- </ng-template>class="" *ngIf="item.kilometer >= 30"> -->
-    ${{ (item.kilometer - 30) * 1700 + 30000 }} 
-  </ng-template>
-  <br />
+    <ng-template #mayor>
+      <!-- </ng-template>class="" *ngIf="item.kilometer >= 30"> -->
+      ${{ (item.kilometer - 30) * 1700 + 30000 }} 
+    </ng-template>
+    <br />
 
+    <!-- botón para pedir el servicio -->
   <div class="">
     <button type="button" class="btn btn-info" (click)="item.kilometer = 35">
       Cotizar

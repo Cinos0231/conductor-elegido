@@ -1,6 +1,7 @@
 export class Item {
   id: number= 0;
-  title: string= '';
+  destino: string= '';
+  origen: string= '';
   price: number= 0;
   kilometer: number= 0;
   completed: boolean= false;

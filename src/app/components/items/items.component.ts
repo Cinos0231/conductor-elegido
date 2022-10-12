@@ -15,18 +15,13 @@ export class ItemsComponent implements OnInit {
     this.items = [
       {
         id: 0,
-        title: 'origen',
-        price: 30000,
-        kilometer: 15,
-        completed: false,
-      },
-      {
-        id: 2,
-        title: 'destino',
+        origen: 'origen',
+        destino:  'destino',
         price: 0,
         kilometer: 35,
-        completed: true,
-      }
+        completed: false,
+      },
+      
     ]
   }
 }

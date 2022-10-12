@@ -1,20 +1,31 @@
 <div class="row">
+  <br>
   <div class="title">
-    {{ item.title }}
+    <input type="search" name="item.origen" id="address-input" placeholder="Usar la ubicación actual?">
+    {{ item.origen | uppercase }}
+  </div>
+  <div>
+    <div class="title">
+      <input type="search" name="item.destino" id="address-input" placeholder="Dónde quieres ir?">
+      {{ item.destino | uppercase }}
+    </div>
   </div>
 
-  <div class="kilometer">{{ item.kilometer }} km</div>
+    <section>
 
-  <div class="price" *ngIf="item.kilometer <= 30">${{ 30000 }}</div>
-
-  <div class="price" *ngIf="item.kilometer >= 30">
-    ${{ (item.kilometer - 30) * 1700 + 30000 }}
-  </div>
+    <div class="kilometer">{{ item.kilometer}} km</div>
+    
+  </section>
+    <div class="price" *ngIf="item.kilometer <= 30">{{ 30000 | currency : 'USD' : 'symbol' : '1.0-0' }}</div>
+    
+    <div class="price" *ngIf="item.kilometer >= 30">
+      {{ (item.kilometer - 30) * 1700 + 30000 | currency : 'USD' : 'symbol' : '1.0-0' }}
+    </div>
 
   <div class="actions">
     <button type="button" class="btn btn-info">
       <!-- (click)= "item.kilometer= 35"> -->
-      Cotizar
+      Calcular
     </button>
     <br>
   </div>

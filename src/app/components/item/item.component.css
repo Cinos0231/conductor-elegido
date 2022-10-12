@@ -10,9 +10,13 @@
 div{
     padding: 5px 0;
 }
+.completed{
+    color: #ddd;
+    text-decoration: line-through;
+}
 .title{
     display: flex;
-    width: 50%;
+    width: 15%;
     padding: 0 5px;
 }
 .price{
@@ -23,14 +27,15 @@ div{
 .kilometer{
     width: 10%;
     padding: 0 5px;
+    text-align: center;
 }
 .completed .price{
     color: #ddd;
 }
 .price{
     text-align: center;
-    border-radius: 50;
     background-color: blueviolet;
+    border-radius: 150;
     width: 15%;
     font-weight: bolder;
     color: rgb(255, 255, 255);
@@ -44,7 +49,7 @@ div{
 }
 .actions button{
     border: none;
-    font-size: 12px;
+    font-size: 15px;
     background-color: rgb(43, 0, 255);
     color: white;
     padding: 5px;

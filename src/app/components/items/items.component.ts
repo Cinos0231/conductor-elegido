@@ -18,7 +18,7 @@ export class ItemsComponent implements OnInit {
         origen: 'origen',
         destino:  'destino',
         price: 0,
-        kilometer: 35,
+        kilometer: 15,
         completed: false,
       },
       

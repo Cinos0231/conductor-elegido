@@ -1,34 +1,45 @@
 <div class="row">
   <br>
-  <div class="title">
-    <input type="search" name="item.origen" id="address-input" placeholder="Usar la ubicación actual?">
-    {{ item.origen | uppercase }}
-  </div>
-  <div>
-    <div class="title">
-      <input type="search" name="item.destino" id="address-input" placeholder="Dónde quieres ir?">
-      {{ item.destino | uppercase }}
+  <section>
+    <div>
+
+      <div class="title">
+        <input type="search" name="item.origen" id="address-1" placeholder="Usar la ubicación actual?">
+        {{ item.origen | uppercase }}
+      </div>
     </div>
-  </div>
-
-    <section>
-
-    <div class="kilometer">{{ item.kilometer}} km</div>
-    
+    <div>
+      <div class="title" for="addres-2">
+        <input type="search" name="item.destino" id="address-2" placeholder="Dónde quieres ir?">
+        {{item.destino | uppercase }}
+      </div>
+    </div>
+    <br>
   </section>
+    <!-- Muestra los km del recorrido -->
+    <div class="kilometer">{{ item.kilometer}} km</div>
+
+    <!-- Cálculo del precio  -->
     <div class="price" *ngIf="item.kilometer <= 30">{{ 30000 | currency : 'USD' : 'symbol' : '1.0-0' }}</div>
     
     <div class="price" *ngIf="item.kilometer >= 30">
       {{ (item.kilometer - 30) * 1700 + 30000 | currency : 'USD' : 'symbol' : '1.0-0' }}
     </div>
-
-  <div class="actions">
-    <button type="button" class="btn btn-info">
-      <!-- (click)= "item.kilometer= 35"> -->
-      Calcular
-    </button>
-    <br>
-  </div>
+    <hr>
+    <div class="actions">
+        <button type="button" class="btn btn-info" 
+          (click)= "item.kilometer= 35">
+          Solicitar
+        </button>
+    </div>
 
   <br />
 </div>
+
+<!-- <h1>{{ title }}</h1> -->
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<!-- <agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map> -->
